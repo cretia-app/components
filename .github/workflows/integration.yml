@@ -19,13 +19,13 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: Install no-optional dependencies
+      - name: 📦 Install dependencies
         run: pnpm install --no-optional --frozen-lockfile --prefer-offline
-      - name: Lint
+      - name: 🚨 Lint
         run: pnpm run lint
-      - name: TSCheck
+      - name: ⚙️ TSCheck
         run: pnpm run tscheck
-      - name: Format
+      - name: 🧹 Format Check
         run: pnpm run format-check
-      - name: Unit Tests
+      - name: 🔬 Unit Tests
         run: pnpm run test
