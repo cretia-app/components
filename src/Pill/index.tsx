@@ -17,13 +17,7 @@ interface Props {
 export function PillBase(
 	props: Props & React.ComponentProps<typeof Styles.Container>,
 ): ReactElement {
-	const {
-		message,
-		children = message,
-		icon,
-		style = {},
-		...containerProps
-	} = props
+	const { message, children = message, icon, style, ...containerProps } = props
 
 	return (
 		<Styles.Container style={style} {...containerProps}>
