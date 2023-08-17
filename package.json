@@ -1,11 +1,15 @@
 {
 	"name": "@cretia/components",
-	"version": "0.0.2-alpha.4",
+	"description": "Cretia components library",
+	"version": "0.0.2-alpha.5",
 	"files": [
 		"dist",
 		"styles",
 		"README.md"
 	],
+	"license": "MIT",
+	"bugs": "https://github.com/cretia-app/components/issues",
+	"homepage": "https://components.cretia.app",
 	"keywords": [
 		"cretia",
 		"components",
