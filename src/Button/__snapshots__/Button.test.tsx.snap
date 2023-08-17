@@ -6,14 +6,14 @@ exports[`<Button /> > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="styled__Container-sc-1qaivzj-0 yMNDW"
+        class="sc-bcPKhP husKdk sc-grXZZQ"
         type="button"
       />
     </div>
   </body>,
   "container": <div>
     <button
-      class="styled__Container-sc-1qaivzj-0 yMNDW"
+      class="sc-bcPKhP husKdk sc-grXZZQ"
       type="button"
     />
   </div>,

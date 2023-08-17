@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 
 import * as Styles from './styled'
 
-type Props = {
+export type Props = {
 	name?: string
 	children?: any
 	title?: string

@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { render, screen } from '@/utils/test'
 
-import Radio from '.'
+import { Radio } from '.'
 
 const TEST_ID = 'radio-input'
 

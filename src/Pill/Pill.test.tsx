@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { render } from '@/utils/test'
 
-import Pill from '.'
+import { Pill } from '.'
 
 describe('<Pill />', () => {
 	it('renders correctly', () => {

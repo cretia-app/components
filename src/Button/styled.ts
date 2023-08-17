@@ -10,6 +10,7 @@ export type ButtonParameters = {
 }
 
 export const baseButtonStyles = css<ButtonParameters>`
+	border: none;
 	height: 32px;
 	display: flex;
 	cursor: default;
