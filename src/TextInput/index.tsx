@@ -58,8 +58,8 @@ type Props = {
 	postfix?: string
 } & ComponentProps<typeof Styles.Input>
 
-export const {TextInputContainer} = Styles
-export const {LabelContainer} = Styles
+export const { TextInputContainer } = Styles
+export const { LabelContainer } = Styles
 
 const TextInputBase = forwardRef(function TextInputWithRef(
 	props: Props,
