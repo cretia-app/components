@@ -1,7 +1,7 @@
 import { ComponentProps, ReactElement } from 'react'
+import { styled } from 'styled-components'
 
 import * as Styles from './styled'
-import { styled } from 'styled-components'
 
 type Props = {
 	name?: string

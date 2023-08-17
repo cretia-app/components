@@ -1,7 +1,7 @@
 import { ChangeEvent, ReactElement } from 'react'
+import { styled } from 'styled-components'
 
 import * as Styles from './styles'
-import { styled } from 'styled-components'
 
 type Props = {
 	value: any

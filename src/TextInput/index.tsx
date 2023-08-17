@@ -8,14 +8,14 @@ import {
 import TextareaAutosize from 'react-textarea-autosize'
 import { IconSearch } from '@tabler/icons-react'
 import Cleave from 'cleave.js/react'
+import { styled } from 'styled-components'
 
-import { Tooltip } from '@/Tooltip'
 import { ErrorMessage } from '@/ErrorMessage'
+import { Tooltip } from '@/Tooltip'
 
 import 'cleave.js/dist/addons/cleave-phone.mx'
 
 import * as Styles from './styles'
-import { styled } from 'styled-components'
 
 type Props = {
 	autoComplete?: string
@@ -58,8 +58,8 @@ type Props = {
 	postfix?: string
 } & ComponentProps<typeof Styles.Input>
 
-export const TextInputContainer = Styles.TextInputContainer
-export const LabelContainer = Styles.LabelContainer
+export const {TextInputContainer} = Styles
+export const {LabelContainer} = Styles
 
 const TextInputBase = forwardRef(function TextInputWithRef(
 	props: Props,

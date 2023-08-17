@@ -1,4 +1,4 @@
 {
-  "root": true,
-  "extends": "eslint-config-cretia"
+	"root": true,
+	"extends": "eslint-config-cretia"
 }

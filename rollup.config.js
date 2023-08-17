@@ -29,7 +29,7 @@ export default [
 				preferBuiltins: false,
 			}),
 			commonjs(),
-			typescript({ tsconfig: './tsconfig.json' }),
+			typescript(),
 			terser(),
 		],
 		external: ['react', 'react-dom', 'styled-components'],

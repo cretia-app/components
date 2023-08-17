@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@/utils/test'
 import { describe, expect, test, vi } from 'vitest'
+
+import { fireEvent, render, screen } from '@/utils/test'
 
 import Button from '.'
 

@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react'
 import { TwitterPicker } from 'react-color'
+import { styled } from 'styled-components'
 
 import { useToggle } from '@/utils'
 
 import * as Styled from './styled'
-import { styled } from 'styled-components'
 
 interface Props {
 	value: string
@@ -42,6 +42,8 @@ function ColorPickerBase({
 						onChange({ target: { name, value: hex } })
 						toggleOpen()
 					}}
+					// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+					// @ts-ignore
 					style={{ position: 'absolute' }}
 				/>
 			)}

@@ -1,7 +1,7 @@
 import { forwardRef, ReactNode, useEffect, useRef } from 'react'
+import { styled } from 'styled-components'
 
 import * as Styled from './styled'
-import { styled } from 'styled-components'
 
 type Props = {
 	children: ReactNode

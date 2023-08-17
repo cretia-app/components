@@ -5,7 +5,6 @@ import { styled } from 'styled-components'
 // import infoIcon from '@/Confirmation/info-icon.svg'
 // import successIcon from '@/Confirmation/success-icon.svg'
 // import warningIcon from '@/Confirmation/warning-icon.svg'
-
 import * as Styles from './styles'
 
 interface Props {
