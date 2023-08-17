@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: Publish Package
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    name: Publish Package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,7 +18,11 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm i
-      - run: npm publish
+      - name: 📦 Install dependencies
+        run: pnpm i
+      - name: 🏗️ Build
+        run: pnpm build
+      - name: 🚀 Publish
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
