@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/blocks'
+import { ColorPalette, ColorItem } from '@storybook/blocks'
+
+<h1>Color Tokens</h1>
+<br />
+<p>
+	You'll need to import this file into your global styles for it to work
+	properly
+</p>
+<br />
+
+<Meta title="Design System/Color Tokens" />
+
+<ColorPalette>
+	<ColorItem title="Background" colors={{ Primary: 'rgb(0, 0, 0)' }} />
+	<ColorItem
+		title="Background Opposite"
+		colors={{ Opposite: 'rgb(255, 255, 255)' }}
+	/>
+	<ColorItem
+		title="Background Alternate"
+		colors={{ Alternate: 'rgb(12, 12, 12)' }}
+	/>
+	<ColorItem
+		title="Text Colors"
+		colors={{
+			Primary: 'rgb(242, 242, 247)',
+			Secondary: 'rgb(165, 165, 165)',
+			Tertiary: 'rgb(100, 100, 100)',
+			Alternate: 'rgb(28, 28, 30)',
+		}}
+	/>
+	<ColorItem
+		title="Blues"
+		subtitle="Accent Colors"
+		colors={{
+			Teal: 'rgb(64, 200, 224)',
+			Cyan: 'rgb(10, 210, 255)',
+			Blue: 'rgb(10, 132, 255)',
+			Indigo: 'rgb(94, 92, 230)',
+		}}
+	/>
+	<ColorItem
+		title="Brights"
+		subtitle="Tag Colors"
+		colors={{
+			Purple: 'rgb(191, 90, 242)',
+			Pink: 'rgb(255, 55, 95)',
+			Red: 'rgb(255, 69, 58)',
+			Orange: 'rgb(255, 159, 10)',
+			Yellow: 'rgb(255, 214, 10)',
+			Green: 'rgb(48, 209, 88)',
+		}}
+	/>
+</ColorPalette>
