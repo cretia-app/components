@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { render } from '@/utils/test'
+import { render } from '@/__tests__/utils'
 
 import { Tag } from '.'
 
