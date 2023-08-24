@@ -6,7 +6,7 @@ import { Label } from './styled'
 type Props = {
 	style?: CSSProperties
 	name: string
-	checked: boolean
+	checked?: boolean
 	required?: boolean
 	onChange?: (event: ChangeEvent<HTMLInputElement>) => any
 	label?: ReactNode
