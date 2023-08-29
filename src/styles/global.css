@@ -71,6 +71,15 @@
 	--border_radius--x_large: 20px;
 
 	/* Sizes for tablet and larger */
+
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	quotes: '“' '”';
+	font-size: 1rem;
+	letter-spacing: -0.022em;
+	font-style: normal;
+	color: var(--human-color--text);
+	direction: ltr;
 }
 
 @media (min-width: 768px) {

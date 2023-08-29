@@ -8,11 +8,23 @@ import { styled } from 'styled-components'
 import * as Styles from './styles'
 
 interface Props {
+	/** content that will be displayed on the pill */
 	message?: string | ReactElement | ReactNode
+	/** content that will be displayed on the pill */
 	children?: string | ReactElement | ReactNode
+	/** overrides `CSSProperties` */
 	style?: CSSProperties
+	/** */
 	icon?: ReactNode
 }
+
+/** Display an important message with Cretia styled Pill
+ *
+ * add a related icon trough the `icon` prop or pass a `button`
+ *
+ * to the children `prop` to emphazise it
+ *
+ */
 
 export function PillBase(
 	props: Props & React.ComponentProps<typeof Styles.Container>,

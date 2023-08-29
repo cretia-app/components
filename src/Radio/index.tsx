@@ -3,16 +3,28 @@ import { styled } from 'styled-components'
 
 import * as Styles from './styles'
 
-type Props = {
+interface Props {
+	/**
+	 * selected option by input value (fully controlled)
+	 * When passing a `value` prop, you must use the `onChange`
+	 * hanlder to update the `value`
+	 */
 	value: any
+	/** Sets the radio checked value */
 	checked: boolean
+	/** `name` attribute of `input` */
 	name: string
+	/** Content of `label` element */
 	label: string
+	/** change callback invoked with input value */
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void
+	/** Optional value for `id` attribute */
 	id?: string
 }
 
-function RadioBase(props: Props): ReactElement {
+/**Radio button styled by Cretia */
+
+export function RadioBase(props: Props): ReactElement {
 	const {
 		value,
 		checked,
@@ -22,7 +34,6 @@ function RadioBase(props: Props): ReactElement {
 		id = `${name}-${value}`,
 		...moreProps
 	} = props
-
 	return (
 		<Styles.Label data-testid="radio-label" htmlFor={id} {...moreProps}>
 			{label}

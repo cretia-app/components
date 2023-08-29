@@ -1,14 +1,17 @@
+// import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from '.'
+import { ButtonBase } from './ButtonBase'
 
-const meta: Meta<typeof Button> = {
-	component: Button,
+const meta = {
+	title: 'Components/Button',
+	component: ButtonBase,
 	tags: ['autodocs'],
-}
+} satisfies Meta<typeof ButtonBase>
 
 export default meta
-type Story = StoryObj<typeof Button>
+
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
 	args: {
@@ -19,6 +22,6 @@ export const Default: Story = {
 export const Destructive: Story = {
 	args: {
 		destructive: true,
-		children: 'Danger!',
+		children: 'Cancel',
 	},
 }
