@@ -4,7 +4,7 @@ export const ui = create({
 	base: 'light',
 	brandTitle: 'Cretia Design System',
 	brandUrl: 'https://github.com/cretia-app/components',
-	brandImage: require('./logo192.png'),
+	brandImage: require('./cretia-logo.png'),
 	brandTarget: '_self',
 
 	appBg: '#F8F8F8',
