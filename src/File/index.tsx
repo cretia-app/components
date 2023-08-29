@@ -4,19 +4,28 @@ import { styled } from 'styled-components'
 import * as Styled from './styled'
 
 interface Props {
+	/** Content of `label` element */
 	label: string
+	/** Sets the `value` attribute of the `input` */
 	value: any
+	/** `name` attribute of `input` */
 	name: string
+	/** `id` attribute of the file */
 	id?: string
+	/** disables the access to file when set to `true` */
 	disabled?: boolean
+	/** sets dark styles when set to `true`*/
 	dark?: boolean
 	accept?: string
+	/** acceps a url for the file preview */
 	previewUrl?: string
+	/** Change callback invoked when the value of the `input` changes */
 	onChange?: ((event: ChangeEvent<HTMLInputElement>) => void) | undefined
+	/** removes the `padding` when set to `true` */
 	paddingless?: boolean
 }
 
-function FileBase(props: Props): ReactElement {
+export function FileBase(props: Props): ReactElement {
 	const {
 		label,
 		value,

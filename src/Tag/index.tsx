@@ -12,6 +12,10 @@ const tagTypeColors = {
 	high: 'var(--human-color--red)',
 }
 
+/**
+ * A rounded rectangle inline label.
+ */
+
 export const Tag = styled.span<{
 	$type?:
 		| 'error'
