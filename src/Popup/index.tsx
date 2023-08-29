@@ -3,16 +3,17 @@ import { styled } from 'styled-components'
 
 import * as Styled from './styled'
 
-type Props = {
+interface Props {
 	children: ReactNode
 	onDismiss: () => void
 	relative: boolean
 	visible: boolean
 }
 
-const PopupBase = forwardRef(function TooltipComponent(props: Props, ref: any) {
-	const { children, onDismiss, visible, ...moreProps } = props
-
+export const PopupBase = forwardRef(function TooltipComponent(
+	{ children, onDismiss, visible = true, ...moreProps }: Props,
+	ref: any,
+) {
 	const tooltipRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {

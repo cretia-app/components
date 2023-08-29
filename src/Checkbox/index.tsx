@@ -4,21 +4,34 @@ import { styled } from 'styled-components'
 import { Label } from './styled'
 
 type Props = {
+	/** overrides `CSSProperties` */
 	style?: CSSProperties
+	/** `name` attribute of `input` */
 	name: string
+	/** Sets the checkbox checked value */
 	checked?: boolean
+	/** indicates that is required for a certain action */
 	required?: boolean
+	/** Change callback invoked when the value of the `input` changes */
 	onChange?: (event: ChangeEvent<HTMLInputElement>) => any
+	/** Content of `label` element */
 	label?: ReactNode
+	/** `id` attribute of `input` */
 	id?: string
+	/** Sets the `value` attribute of the `input` */
 	value?: string
+	/** disables the checkbox when set to `true` */
 	disabled?: boolean
+	/** control whether the checkbox is in read-only mode */
 	readOnly?: boolean
 }
 
 const styles = { input: { marginRight: 4, flexShrink: 0 } }
 
-function CheckboxBase(props: Props): ReactElement {
+/**
+ * Cretia styled checkbox with built-in label.
+ */
+export function CheckboxBase(props: Props): ReactElement {
 	const {
 		style = {},
 		label,
@@ -31,7 +44,6 @@ function CheckboxBase(props: Props): ReactElement {
 		disabled,
 		readOnly,
 	} = props
-
 	return (
 		<Label key={String(checked)} style={style} htmlFor={id}>
 			<input
