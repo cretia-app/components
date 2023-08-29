@@ -8,13 +8,23 @@ import * as Styled from './styled'
 
 interface Props {
 	value: string
+	/** `name` attribute of `input` */
 	name: string
+	/** control whether the color picker is in read-only mode */
 	readOnly?: boolean
+	/** displayed if theres an error message as `string` */
 	error?: string | false
+	/** Change callback invoked when the value of the `input` changes */
 	onChange?: (value: any) => void
 }
 
-function ColorPickerBase({
+/**
+ * Select a color from the range displayed to replace the component value with
+ *
+ * it's correspondant HEX
+ */
+
+export function ColorPickerBase({
 	value = '#ffffff',
 	onChange = () => undefined,
 	name,

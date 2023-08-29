@@ -9,18 +9,33 @@ type Segment = {
 	id?: string
 }
 
-type Props = {
+interface Props {
+	/** Sets the `value` attribute of the `input` */
 	value: any
+	/** `id` attribute of `input` */
 	id?: string
 	name?: string
+	/** Content of `label` element */
 	label?: string
+	/**Array of segment objects composed of:
+	 *
+	 *  `{ value: '', label: '', id: ''}`
+	 *
+	 * */
 	segments: Segment[]
+	/** Change callback invoked when the value of the `input` changes */
 	onChange: (_: { target: { name?: string; value?: any } }) => unknown
+	/** disables the segmented control when set to `true` */
 	disabled?: boolean
+	/** control whether the segmented control is in read-only mode */
 	readOnly?: boolean
-} & Omit<ComponentProps<typeof Styles.Container>, 'onChange'>
+}
 
-function SegmentedControlBase(props: Props): ReactElement {
+/** Make a selection from a set of mutually exclusive options. */
+
+export function SegmentedControlBase(
+	props: Props & Omit<ComponentProps<typeof Styles.Container>, 'onChange'>,
+): ReactElement {
 	const {
 		name,
 		segments,

@@ -15,15 +15,22 @@ const TooltipProvider = TooltipPrimitive.Provider
 const TooltipTrigger = TooltipPrimitive.Trigger
 const TooltipContent = StyledContent
 
-function TooltipBase({
-	content,
-	children,
-	side = 'top',
-}: {
+interface Props {
+	/** Content inside rhe tooltip*/
 	content: React.ReactNode | string
+	/** The root node of JSX passed into Tooltip as children will act as the tooltip trigger */
 	children: React.ReactNode
+	/** Sets prefferred side of the trigger the tooltip should appear */
 	side?: 'top' | 'right' | 'bottom' | 'left'
-}) {
+}
+
+/**
+ * Renders a tooltip on hover or focus of a trigger.
+ *
+ * The tooltip will position itself based on the `side` prop.
+ */
+
+export function TooltipBase({ content = '', children, side = 'top' }: Props) {
 	return (
 		<TooltipProvider>
 			<TooltipPrimitive.Root delayDuration={0}>
