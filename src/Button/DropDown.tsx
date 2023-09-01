@@ -29,6 +29,7 @@ const Wrapper = styled<any>(Flex)`
 `
 
 const Trigger = styled(DropdownMenu.Trigger)`
+	border: inherit;
 	border-left: 1px solid var(--human-color--gray-4);
 	padding-left: 2px;
 	height: 100%;
@@ -40,6 +41,7 @@ const Trigger = styled(DropdownMenu.Trigger)`
 	&:focus:not([readonly]),
 	&:active:not([readonly]) {
 		box-shadow: none;
+		background-color: inherit;
 		border-color: inherit;
 		outline: none;
 
@@ -77,7 +79,7 @@ const Content = styled(DropdownMenu.Content)`
 	}
 `
 
-function DropdownButtonBase(props: Props) {
+export function DropdownButtonBase(props: Props) {
 	return (
 		<Wrapper>
 			<Button {...props} />

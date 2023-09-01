@@ -7,7 +7,10 @@ export const Label = styled.label`
 	font-size: 1rem;
 	align-items: center;
 	font-weight: 500;
-
+	color: var(--human-color--text);
+	&:focus:not([readonly]) {
+		border-color: var(--human-color--blue);
+	}
 	[readonly] {
 		cursor: default;
 	}

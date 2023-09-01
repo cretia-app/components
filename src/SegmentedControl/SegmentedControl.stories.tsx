@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react'
 import { SegmentedControlBase } from '.'
 
 const meta = {
-	title: 'Components/SegmentedControl',
+	title: 'Components/Segmented Control',
 	component: SegmentedControlBase,
 	tags: ['autodocs'],
 	parameters: {
