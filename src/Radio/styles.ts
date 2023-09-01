@@ -8,8 +8,4 @@ export const Label = styled.label`
 	input {
 		margin-right: 4px;
 	}
-
-	&:focus:not([readonly]) {
-		border-color: var(--human-color--blue);
-	}
 `
