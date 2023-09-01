@@ -4,9 +4,18 @@ import { styled } from 'styled-components'
 import * as Styled from './styled'
 
 interface Props {
+	/** information that will be shown */
 	children: ReactNode
+	/** what happens when the click occurs outside the popup */
 	onDismiss: () => void
+	/** when set to `true` the popup is relative to it's parent */
 	relative: boolean
+	/** when set to `true` the popup is visible
+	 *
+	 * be sure to change this value with the onDismiss function
+	 *
+	 * so the popup becomes not visible
+	 */
 	visible: boolean
 }
 

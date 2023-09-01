@@ -1,13 +1,16 @@
-import { Meta } from '@storybook/blocks'
+import { Meta, Source } from '@storybook/blocks'
 import { ColorPalette, ColorItem } from '@storybook/blocks'
 
 <h1>Color Tokens</h1>
 <br />
 <p>
-	You'll need to import this file into your global styles for it to work
-	properly
+	You'll need to import this file into your global styles or app index for it to
+	work properly
 </p>
-<br />
+<Source
+	language={'tsx'}
+	code={'import "@cretia/components/styles/global.css"'}
+/>
 
 <Meta title="Design System/Color Tokens" />
 

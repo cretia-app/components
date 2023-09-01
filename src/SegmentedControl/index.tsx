@@ -33,21 +33,18 @@ interface Props {
 
 /** Make a selection from a set of mutually exclusive options. */
 
-export function SegmentedControlBase(
-	props: Props & Omit<ComponentProps<typeof Styles.Container>, 'onChange'>,
-): ReactElement {
-	const {
-		name,
-		segments,
-		onChange,
-		value,
-		label,
-		id,
-		readOnly,
-		disabled = readOnly,
-		...otherProps
-	} = props
-
+export function SegmentedControlBase({
+	name,
+	segments,
+	onChange,
+	value,
+	label,
+	id,
+	readOnly,
+	disabled = readOnly,
+	...otherProps
+}: Props &
+	Omit<ComponentProps<typeof Styles.Container>, 'onChange'>): ReactElement {
 	return (
 		<Styles.Container {...otherProps}>
 			{label}

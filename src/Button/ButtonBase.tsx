@@ -44,22 +44,21 @@ export { baseButtonStyles } from './styled'
  * `solid` and `$transparent` props.
  */
 
-function ButtonBase(props: Props) {
-	const {
-		name = 'react',
-		title,
-		submit = false,
-		inline = false,
-		center = false,
-		readOnly = false,
-		required = false,
-		children,
-		disabled = false,
-		destructive = false,
-		solid = submit,
-		small = inline,
-		$transparent = inline,
-	} = props
+function ButtonBase({
+	name = 'react',
+	title,
+	submit = false,
+	inline = false,
+	center = false,
+	readOnly = false,
+	required = false,
+	children,
+	disabled = false,
+	destructive = false,
+	solid = submit,
+	small = inline,
+	$transparent = inline,
+}: Props) {
 	const useButton = !submit && typeof children !== 'string'
 
 	return (

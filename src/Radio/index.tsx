@@ -24,16 +24,15 @@ interface Props {
 
 /**Radio button styled by Cretia */
 
-export function RadioBase(props: Props): ReactElement {
-	const {
-		value,
-		checked,
-		name,
-		onChange,
-		label,
-		id = `${name}-${value}`,
-		...moreProps
-	} = props
+export function RadioBase({
+	value,
+	checked,
+	name,
+	onChange,
+	label,
+	id = `${name}-${value}`,
+	...moreProps
+}: Props): ReactElement {
 	return (
 		<Styles.Label data-testid="radio-label" htmlFor={id} {...moreProps}>
 			{label}

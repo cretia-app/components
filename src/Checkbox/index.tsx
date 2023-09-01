@@ -26,24 +26,25 @@ type Props = {
 	readOnly?: boolean
 }
 
-const styles = { input: { marginRight: 4, flexShrink: 0 } }
+const styles = {
+	input: { marginRight: 4, flexShrink: 0 },
+}
 
 /**
  * Cretia styled checkbox with built-in label.
  */
-export function CheckboxBase(props: Props): ReactElement {
-	const {
-		style = {},
-		label,
-		name,
-		id = name,
-		checked = false,
-		required = false,
-		onChange,
-		value,
-		disabled,
-		readOnly,
-	} = props
+export function CheckboxBase({
+	style = {},
+	label,
+	name,
+	id = name,
+	checked = false,
+	required = false,
+	onChange,
+	value,
+	disabled,
+	readOnly,
+}: Props): ReactElement {
 	return (
 		<Label key={String(checked)} style={style} htmlFor={id}>
 			<input

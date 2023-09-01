@@ -21,7 +21,7 @@ export const TextInputContainer = styled.div<{
 			!$borderless && '1px solid var(--human-color--gray-4)'};
 		background-color: var(--human-color--background);
 		&:focus {
-			border-color: var(--human-color--blue);
+			border-color: red;
 		}
 		&[aria-invalid] {
 			border-color: var(--human-color--red);
