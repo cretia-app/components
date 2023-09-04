@@ -1,5 +1,4 @@
 import React from 'react'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { TooltipBase } from '.'
 
@@ -7,16 +6,16 @@ export default {
 	title: 'Components/Tooltip',
 	component: TooltipBase,
 	tags: ['autodocs'],
-} as ComponentMeta<typeof TooltipBase>
+}
 
-const Template: ComponentStory<typeof TooltipBase> = (args) => (
+const Template = (args) => (
 	<TooltipBase {...args}>
 		<p>Hover me</p>
 	</TooltipBase>
 )
 
-export const Default = Template.bind({})
+export const Overview = Template.bind({})
 
-Default.args = {
+Overview.args = {
 	content: 'Click me',
 }

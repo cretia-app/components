@@ -1,27 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import React, { useState } from 'react'
+import type { Meta } from '@storybook/react'
 
 import { SegmentedControlBase } from '.'
 
 const meta = {
-	title: 'Components/SegmentedControl',
+	title: 'Components/Segmented Control',
 	component: SegmentedControlBase,
 	tags: ['autodocs'],
+	parameters: {
+		layout: 'padded',
+	},
 } satisfies Meta<typeof SegmentedControlBase>
 
 export default meta
 
-type Story = StoryObj<typeof meta>
-
-export const Default: Story = {
-	args: {
-		id: '',
-		name: 'Segmented Control',
-		segments: [
-			{ value: 'First', label: 'First' },
-			{ value: 'Second', label: 'Second' },
-		],
-		label: 'Segmented Control',
-		disabled: false,
-		readOnly: false,
-	},
+export const Overview = () => {
+	const [value, setValue] = useState('')
+	return (
+		<SegmentedControlBase
+			value={value ? value : 'First'}
+			segments={[
+				{ value: 'First', label: 'First' },
+				{ value: 'Second', label: 'Second' },
+			]}
+			name="Options"
+			onChange={(e) => {
+				setValue(e.target.value)
+			}}
+		/>
+	)
 }

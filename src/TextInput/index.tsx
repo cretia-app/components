@@ -106,6 +106,8 @@ const TextInputBase = forwardRef(function TextInputWithRef(
 			min={props.min}
 			max={props.max}
 			type={type}
+			$isSearch={type === 'search'}
+			$borderless={borderless}
 			$align={postfix ? 'right' : undefined}
 			// onKeyDown={handleKeyDown}
 			{...otherProps}
@@ -116,8 +118,6 @@ const TextInputBase = forwardRef(function TextInputWithRef(
 		<Styles.TextInputContainer
 			style={containerStyle}
 			data-testid="text-container"
-			$borderless={borderless}
-			$isSearch={type === 'search'}
 			$prefix={prefix}
 			$postfix={postfix}
 		>

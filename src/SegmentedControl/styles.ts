@@ -16,6 +16,7 @@ export const Segment = styled.button<{ selected: boolean }>`
 	padding: 6px 4px;
 	color: var(--human-color--text);
 	border-radius: var(--border_radius--medium);
+	border: none;
 	background-color: ${({ selected }) =>
 		selected && 'var(--human-color--background)'};
 	box-shadow: ${({ selected }) => selected && '0 0 4px rgba(0, 0, 0, 0.3)'};
