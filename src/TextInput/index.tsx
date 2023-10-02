@@ -1,13 +1,14 @@
 import {
+	forwardRef
+} from 'react'
+import { IconSearch } from '@tabler/icons-react'
+import Cleave from 'cleave.js/react'
+import type {
 	ChangeEvent,
 	ComponentProps,
 	CSSProperties,
-	forwardRef,
-	ReactNode,
-} from 'react'
+	ReactNode} from 'react';
 import TextareaAutosize from 'react-textarea-autosize'
-import { IconSearch } from '@tabler/icons-react'
-import Cleave from 'cleave.js/react'
 import { styled } from 'styled-components'
 
 import { ErrorMessage } from '@/ErrorMessage'

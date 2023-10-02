@@ -37,7 +37,7 @@ export const baseButtonStyles = css<ButtonParameters>`
 	}
 `
 
-export const Container = styled.input<ButtonParameters>`
+export const Container = styled.button<ButtonParameters>`
 	${baseButtonStyles}
 
 	&:active {

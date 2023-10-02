@@ -1,6 +1,6 @@
-import type { ComponentProps } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { IconChevronDown } from '@tabler/icons-react'
+import type { ComponentProps } from 'react'
 import styled from 'styled-components'
 
 import { Flex } from '@/system'
@@ -87,7 +87,7 @@ export function DropdownButtonBase(props: Props) {
 				<Trigger>
 					<IconChevronDown strokeWidth={2} />
 				</Trigger>
-				<DropdownMenu.Portal style={{ backgroundColor: 'transparent' }}>
+				<DropdownMenu.Portal>
 					<Content>
 						{props.items.map(({ children, ...item }, index) => (
 							<Item as={DropdownMenu.Item} {...item} key={index}>

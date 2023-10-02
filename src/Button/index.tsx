@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement } from 'react'
+import type { ComponentProps, ReactElement } from 'react'
 import { styled } from 'styled-components'
 
 import * as Styles from './styled'
@@ -6,6 +6,9 @@ import * as Styles from './styled'
 export type Props = {
 	name?: string
 	children?: any
+	/**
+	 * @deprecated
+	 */
 	title?: string
 	small?: boolean
 	solid?: boolean
