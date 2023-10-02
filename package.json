@@ -1,7 +1,7 @@
 {
 	"name": "@cretia/components",
 	"description": "Cretia components library",
-	"version": "0.0.2-alpha.16",
+	"version": "0.0.2-alpha.17",
 	"files": [
 		"dist",
 		"styles",
@@ -25,13 +25,12 @@
 	"scripts": {
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx src",
 		"build": "rollup -c --bundleConfigAsCjs",
-		"typecheck": "tsc --noEmit",
+		"typecheck": "tsc --noEmit --pretty",
 		"clean": "rimraf dist node_modules",
 		"format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
 		"format-check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"tscheck": "tsc --noEmit --pretty",
 		"test": "vitest"
 	},
 	"devDependencies": {
@@ -84,7 +83,6 @@
 		"cleave.js": "1.x",
 		"react-color": "2.x",
 		"react-markdown": "8.x",
-		"react-router-dom": "6.x",
 		"react-textarea-autosize": "8.x",
 		"styled-components": "6.x",
 		"styled-system": "5.x"

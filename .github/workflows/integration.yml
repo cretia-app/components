@@ -24,7 +24,7 @@ jobs:
       - name: 🚨 Lint
         run: pnpm run lint
       - name: ⚙️ TSCheck
-        run: pnpm run tscheck
+        run: pnpm run typecheck
       - name: 🧹 Format Check
         run: pnpm run format-check
       - name: 🔬 Unit Tests
