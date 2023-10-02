@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
 import * as Styles from './styled'
 
@@ -11,7 +11,7 @@ interface Props {
 	small?: boolean
 	/** gives the button a solid background when set to `true` */
 	solid?: boolean
-	/** gitves the submit attribute to the button element */
+	/** gives the submit attribute to the button element */
 	submit?: boolean
 	/**to display the button inline with other elements */
 	inline?: boolean
@@ -44,22 +44,22 @@ export { baseButtonStyles } from './styled'
  * `solid` and `$transparent` props.
  */
 
-function ButtonBase({
-	name = 'react',
-	title,
-	submit = false,
-	inline = false,
-	center = false,
-	readOnly = false,
-	required = false,
-	children,
-	disabled = false,
-	destructive = false,
-	solid = submit,
-	small = inline,
-	$transparent = inline,
-}: Props) {
-	const useButton = !submit && typeof children !== 'string'
+function ButtonBase(props: Props) {
+	const {
+		name,
+		title,
+		submit = false,
+		inline = false,
+		center = false,
+		readOnly = false,
+		required = false,
+		children = title,
+		disabled = false,
+		destructive = false,
+		solid = Boolean(submit),
+		small = Boolean(inline),
+		$transparent = Boolean(inline),
+	} = props
 
 	return (
 		<Styles.Container
@@ -73,9 +73,7 @@ function ButtonBase({
 			$destructive={destructive}
 			$transparent={$transparent}
 			type={submit ? 'submit' : 'button'}
-			{...(useButton
-				? { as: 'button' as any, children: children || title }
-				: { value: children || title })}
+			{...(submit ? { as: 'input', value: children } : { children })}
 		/>
 	)
 }
