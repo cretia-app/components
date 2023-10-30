@@ -9,7 +9,7 @@ export type ButtonParameters = {
 	$transparent?: boolean
 }
 
-export const baseButtonStyles = css<ButtonParameters>`
+export const ButtonStyle = css<ButtonParameters>`
 	border: none;
 	height: 32px;
 	display: flex;
@@ -38,7 +38,7 @@ export const baseButtonStyles = css<ButtonParameters>`
 `
 
 export const Container = styled.button<ButtonParameters>`
-	${baseButtonStyles}
+	${ButtonStyle}
 
 	&:active {
 		opacity: 0.5;

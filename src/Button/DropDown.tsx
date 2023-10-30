@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Flex } from '@/system'
 
-import { baseButtonStyles, Container } from './styled'
+import { ButtonStyle, Container } from './styled'
 import { Button } from '.'
 
 type Props = ComponentProps<typeof Button> & {
@@ -15,7 +15,7 @@ type Props = ComponentProps<typeof Button> & {
 }
 
 const Wrapper = styled<any>(Flex)`
-	${baseButtonStyles}
+	${ButtonStyle}
 
 	padding: 0;
 	overflow: hidden;

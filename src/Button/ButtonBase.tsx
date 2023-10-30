@@ -35,7 +35,7 @@ interface Props {
 	title?: string
 }
 
-export { baseButtonStyles } from './styled'
+export { ButtonStyle as baseButtonStyles } from './styled'
 
 /**Cretia actions buttons
  *
