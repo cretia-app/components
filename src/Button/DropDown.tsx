@@ -83,20 +83,22 @@ export function DropdownButtonBase(props: Props) {
 	return (
 		<Wrapper>
 			<Button {...props} />
-			<DropdownMenu.Root>
-				<Trigger>
-					<IconChevronDown strokeWidth={2} />
-				</Trigger>
-				<DropdownMenu.Portal>
-					<Content>
-						{props.items.map(({ children, ...item }, index) => (
-							<Item as={DropdownMenu.Item} {...item} key={index}>
-								{children}
-							</Item>
-						))}
-					</Content>
-				</DropdownMenu.Portal>
-			</DropdownMenu.Root>
+			{Boolean(props.items.length) && (
+				<DropdownMenu.Root>
+					<Trigger>
+						<IconChevronDown strokeWidth={2} />
+					</Trigger>
+					<DropdownMenu.Portal>
+						<Content>
+							{props.items.map(({ children, ...item }, index) => (
+								<Item as={DropdownMenu.Item} {...item} key={index}>
+									{children}
+								</Item>
+							))}
+						</Content>
+					</DropdownMenu.Portal>
+				</DropdownMenu.Root>
+			)}
 		</Wrapper>
 	)
 }
