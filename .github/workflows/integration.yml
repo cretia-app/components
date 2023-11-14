@@ -8,6 +8,7 @@ on:
 
 jobs:
   lint-and-test:
+    name: Lint, typecheck and test
     runs-on: 'ubuntu-latest'
     timeout-minutes: 15
     steps:
@@ -26,6 +27,6 @@ jobs:
       - name: ⚙️ TSCheck
         run: pnpm run typecheck
       - name: 🧹 Format Check
-        run: pnpm run format-check
+        run: pnpm run format:check
       - name: 🔬 Unit Tests
         run: pnpm run test
