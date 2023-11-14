@@ -12,16 +12,38 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Overview: Story = {
+export const Default: Story = {
 	args: {
 		children: 'Click Me!',
 	},
 }
 
-export const Destructive: Story = {
+export const Primary: Story = {
+	args: {
+		children: 'Click Me!',
+		$variant: 'primary',
+	},
+}
+
+export const Tertiary: Story = {
+	args: {
+		children: 'Click Me!',
+		$variant: 'tertiary',
+	},
+}
+
+export const Danger: Story = {
 	args: {
 		destructive: true,
 		children: 'Cancel',
+	},
+}
+
+export const DangerPrimary: Story = {
+	args: {
+		destructive: true,
+		children: 'Cancel',
+		$variant: 'primary',
 	},
 }
 
@@ -30,5 +52,12 @@ export const Submit: Story = {
 	args: {
 		submit: true,
 		children: 'Submit',
+	},
+}
+
+export const Disabled: Story = {
+	args: {
+		disabled: true,
+		children: 'Disabled',
 	},
 }

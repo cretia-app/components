@@ -2,14 +2,80 @@ import styled, { css } from 'styled-components'
 
 export type ButtonParameters = {
 	small?: boolean
+	/**
+	 * @deprecated use '$variant'
+	 */
 	solid?: boolean
 	$center?: boolean
 	disabled?: boolean
+	/**
+	 * @deprecated use '$danger'
+	 */
 	$destructive?: boolean
+	$danger?: boolean
+	/** @deprecated use '$variant' */
 	$transparent?: boolean
+	$variant?: 'primary' | 'secondary' | 'tertiary'
 }
 
 export const ButtonStyle = css<ButtonParameters>`
+	--color--text: var(--human-color--blue-500);
+	--color--background: var(--human-color--blue-50);
+	--color--outline: var(--color--text);
+	--color--background__hover: var(--human-color--blue-100);
+
+	&:disabled {
+		--color--background: var(--human-color--gray-6);
+		--color--text: var(--human-color--gray-4);
+	}
+
+	${({
+		solid,
+		$transparent,
+		$variant = solid ? 'primary' : $transparent ? 'tertiary' : 'secondary',
+	}) =>
+		$variant === 'primary'
+			? css`
+					--color--text: var(--human-color--blue-50);
+					--color--background: var(--human-color--blue-500);
+					--color--outline: var(--human-color--blue-300);
+					--color--background__hover: var(--human-color--blue-600);
+			  `
+			: $variant === 'tertiary'
+			? css`
+					--color--background: transparent;
+					--color--background__hover: var(--human-color--blue-100);
+			  `
+			: undefined}
+
+	${({
+		$destructive,
+		solid,
+		$transparent,
+		$variant = solid ? 'primary' : $transparent ? 'tertiary' : 'secondary',
+		$danger = $destructive,
+	}) =>
+		$danger &&
+		css`
+			--color--text: var(--human-color--red-500);
+			--color--background: var(--human-color--red-50);
+			--color--background__hover: var(--human-color--red-100);
+
+			${$variant === 'primary'
+				? css`
+						--color--text: var(--human-color--red-50);
+						--color--background: var(--human-color--red-500);
+						--color--outline: var(--human-color--red-300);
+						--color--background__hover: var(--human-color--red-600);
+				  `
+				: $variant === 'tertiary'
+				? css`
+						--color--background: transparent;
+						--color--background__hover: var(--human-color--red-100);
+				  `
+				: undefined}
+		`}
+
 	border: none;
 	height: 32px;
 	display: flex;
@@ -20,15 +86,16 @@ export const ButtonStyle = css<ButtonParameters>`
 	border-radius: var(--border_radius--medium);
 	align-items: center;
 	gap: 4px;
-	color: var(--human-color--blue);
+	color: var(--color--text);
 	padding: 0 calc(var(--space--small) + var(--space--micro));
 	justify-content: ${({ $center }) => ($center ? 'center' : undefined)};
-	background-color: ${({ $destructive, disabled }) =>
-		disabled
-			? 'var(--human-color--gray-6)'
-			: $destructive
-			? 'rgb(255,45,85,0.1)'
-			: 'var(--human-color--overlay-blue)'};
+	background-color: var(--color--background);
+	outline: none;
+
+	&:hover:not(:disabled):not([readonly]),
+	&[data-state='open']:not(:disabled):not([readonly]) {
+		background-color: var(--color--background__hover);
+	}
 
 	svg {
 		stroke-width: 2.5;
@@ -40,64 +107,19 @@ export const ButtonStyle = css<ButtonParameters>`
 export const Container = styled.button<ButtonParameters>`
 	${ButtonStyle}
 
-	&:active {
-		opacity: 0.5;
+	&:active:not(:disabled):not([readonly]),
+	&:focus:not(:disabled):not([readonly]) {
+		box-shadow: 0 0 0 2px var(--color--outline);
 	}
-
-	&:not([readonly]):focus,
-	&:not([readonly]):hover {
-		${({ $transparent, disabled }) =>
-			$transparent
-				? 'background-color: var(--human-color--overlay-blue)'
-				: disabled
-				? undefined
-				: 'box-shadow: 0 0 0 1.5px var(--human-color--blue)'};
-		text-decoration: none;
+	&:active:not(:disabled):not([readonly]) {
+		background-color: var(--color--background__hover);
 	}
 
 	${({ small }) =>
 		small &&
-		`
-      padding: 1px var(--space--small);
-      border-radius: var(--border_radius--medium);
-      height: auto;
-    `}
-
-	${({ solid, disabled, $destructive }) =>
-		solid &&
 		css`
-			border-color: var(--human-color--blue);
-			background-color: var(
-				--human-color--${disabled ? 'gray' : $destructive ? 'red' : 'blue'}
-			);
-			color: white;
-
-			&:not([readonly]):hover {
-				color: white;
-			}
-		`}
-
-  ${({ $destructive, solid }) =>
-		$destructive &&
-		css`
-			border-color: var(--human-color--red);
-			color: var(--human-color--${solid ? 'white' : 'red'});
-
-			&:not([readonly]):focus,
-			&:not([readonly]):hover {
-				box-shadow: 0 0 0 1.5px var(--human-color--red);
-			}
-		`}
-
- 
-
-  ${({ $transparent }) => $transparent && `background-color: transparent;`}
-
-  ${({ solid, disabled }) =>
-		disabled &&
-		css`
-			cursor: not-allowed;
-			border-color: var(--human-color--gray) !important;
-			color: ${solid ? 'white' : 'var(--human-color--gray)'};
+			padding: 1px var(--space--small);
+			border-radius: var(--border_radius--medium);
+			height: auto;
 		`}
 `

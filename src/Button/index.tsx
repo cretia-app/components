@@ -8,15 +8,18 @@ export type Props = {
 	name?: string
 	children?: ReactNode
 	small?: boolean
+	/** @deprecated use '$variant' */
 	solid?: boolean
+	/** @deprecated use 'type' */
 	submit?: boolean
+	/** @deprecated use '$variant' */
 	inline?: boolean
 	center?: boolean
 	default?: boolean
 	disabled?: boolean
-	readOnly?: boolean
-	required?: boolean
+	/** @deprecated use '$danger' */
 	destructive?: boolean
+	/** @deprecated use '$variant' */
 	$transparent?: boolean
 } & ComponentProps<typeof Styles.Container>
 
@@ -32,6 +35,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, Props>(
 			solid = submit,
 			small = inline,
 			$transparent = inline,
+			type = submit ? 'submit' : 'button',
 			...otherProps
 		} = props
 
@@ -43,7 +47,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, Props>(
 				$center={center}
 				$destructive={destructive}
 				$transparent={$transparent}
-				type={submit ? 'submit' : 'button'}
+				type={type}
 				{...otherProps}
 			/>
 		)
