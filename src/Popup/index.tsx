@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useRef } from 'react'
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react'
 import { styled } from 'styled-components'
 
 import * as Styled from './styled'
