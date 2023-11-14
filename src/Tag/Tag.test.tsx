@@ -4,7 +4,7 @@ import { render } from '@/__tests__/utils'
 
 import { Tag } from '.'
 
-describe('<Tag />', () => {
+describe.concurrent('<Tag />', () => {
 	it('renders correctly', () => {
 		const tree = render(<Tag />)
 

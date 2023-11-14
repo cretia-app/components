@@ -6,7 +6,7 @@ import { Radio } from '.'
 
 const TEST_ID = 'radio-input'
 
-describe('<Radio />', () => {
+describe.concurrent('<Radio />', () => {
 	it('renders correctly', () => {
 		const tree = render(
 			<Radio

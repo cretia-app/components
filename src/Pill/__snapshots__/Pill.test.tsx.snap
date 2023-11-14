@@ -6,7 +6,7 @@ exports[`<Pill /> > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="sc-bcPKhP jaMeqb sc-dkjKgF"
+        class="sc-bdfCDU eEcawE sc-dlfmHC"
       >
         <p>
           Think different
@@ -16,7 +16,7 @@ exports[`<Pill /> > renders correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="sc-bcPKhP jaMeqb sc-dkjKgF"
+      class="sc-bdfCDU eEcawE sc-dlfmHC"
     >
       <p>
         Think different

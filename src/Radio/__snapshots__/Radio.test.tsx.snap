@@ -6,7 +6,7 @@ exports[`<Radio /> > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <label
-        class="sc-bcPKhP dueiAV sc-grXZZQ"
+        class="sc-bdfCDU fWDrC sc-gsTDqH"
         data-testid="radio-label"
         for="radio-value"
       >
@@ -23,7 +23,7 @@ exports[`<Radio /> > renders correctly 1`] = `
   </body>,
   "container": <div>
     <label
-      class="sc-bcPKhP dueiAV sc-grXZZQ"
+      class="sc-bdfCDU fWDrC sc-gsTDqH"
       data-testid="radio-label"
       for="radio-value"
     >

@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from '@/__tests__/utils'
 
 import { Button } from '.'
 
-describe('<Button />', () => {
+describe.concurrent('<Button />', () => {
 	test('renders correctly', () => {
 		const component = render(<Button />)
 
@@ -14,9 +14,9 @@ describe('<Button />', () => {
 	test('fires onClick', () => {
 		const handleClick = vi.fn()
 
-		const { rerender } = render(
-			<Button onClick={handleClick} title="click me" />,
-		)
+		const { rerender } = render(<Button onClick={handleClick}>Click me</Button>)
+
+		screen.debug()
 
 		fireEvent(
 			screen.getByText(/click me/i),
@@ -28,7 +28,11 @@ describe('<Button />', () => {
 
 		expect(handleClick).toHaveBeenCalledTimes(1)
 
-		rerender(<Button onClick={handleClick} title="click me" disabled />)
+		rerender(
+			<Button onClick={handleClick} disabled>
+				Click me
+			</Button>,
+		)
 
 		fireEvent(
 			screen.getByText(/click me/i),

@@ -4,7 +4,7 @@ import { render } from '@/__tests__/utils'
 
 import { Pill } from '.'
 
-describe('<Pill />', () => {
+describe.concurrent('<Pill />', () => {
 	it('renders correctly', () => {
 		const tree = render(<Pill message="Think different" />)
 
