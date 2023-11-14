@@ -65,7 +65,7 @@ const Content = styled(DropdownMenu.Content)`
 	--border--radius: 8px;
 
 	flex-direction: column;
-	background-color: transparent;
+	background-color: var(--human-color--background);
 	box-shadow: var(--box-shadow--popup);
 	border-radius: var(--border--radius);
 	border: 1px solid var(--human-color--gray-4);

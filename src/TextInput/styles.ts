@@ -68,8 +68,8 @@ export const LabelContainer = styled.div`
 export const Input = styled.input<{
 	$align?: string
 	$borderless?: boolean
-	$prefix?: string
-	$postfix?: string
+	$prefix?: boolean
+	$postfix?: boolean
 	$isSearch?: boolean
 }>`
 	text-align: ${({ $align }) => $align};

@@ -1,13 +1,12 @@
-import {
-	forwardRef
-} from 'react'
+import { forwardRef } from 'react'
 import { IconSearch } from '@tabler/icons-react'
 import Cleave from 'cleave.js/react'
 import type {
 	ChangeEvent,
 	ComponentProps,
 	CSSProperties,
-	ReactNode} from 'react';
+	ReactNode,
+} from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 import { styled } from 'styled-components'
 
@@ -94,6 +93,8 @@ const TextInputBase = forwardRef(function TextInputWithRef(
 			{...(format ? { options: format } : {})}
 			{...(error ? { ['aria-invalid']: true } : {})}
 			ref={ref}
+			$prefix={Boolean(prefix)}
+			$postfix={Boolean(postfix)}
 			name={name}
 			id={id}
 			placeholder={props.placeholder || props.label}
