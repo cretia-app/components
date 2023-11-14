@@ -16,8 +16,6 @@ describe.concurrent('<Button />', () => {
 
 		const { rerender } = render(<Button onClick={handleClick}>Click me</Button>)
 
-		screen.debug()
-
 		fireEvent(
 			screen.getByText(/click me/i),
 			new MouseEvent('click', {
