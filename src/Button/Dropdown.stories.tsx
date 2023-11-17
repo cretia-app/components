@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { DropdownButton } from './Dropdown'
@@ -6,6 +7,13 @@ const meta = {
 	title: 'Components/Button/Dropdown',
 	component: DropdownButton,
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div style={{ margin: '35px' }}>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof DropdownButton>
 
 export default meta

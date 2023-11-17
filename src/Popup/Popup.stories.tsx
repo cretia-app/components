@@ -9,6 +9,13 @@ const meta = {
 	title: 'Components/Popup',
 	component: PopupBase,
 	tags: ['autodocs'],
+	decorators: [
+		(Story) => (
+			<div style={{ margin: '30px' }}>
+				<Story />
+			</div>
+		),
+	],
 } satisfies Meta<typeof PopupBase>
 
 export default meta
