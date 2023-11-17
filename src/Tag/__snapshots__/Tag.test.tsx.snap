@@ -6,13 +6,13 @@ exports[`<Tag /> > renders correctly 1`] = `
   "baseElement": <body>
     <div>
       <span
-        class="sc-bcPKhP ehMdpF"
+        class="sc-bdfCDU gDbbFz"
       />
     </div>
   </body>,
   "container": <div>
     <span
-      class="sc-bcPKhP ehMdpF"
+      class="sc-bdfCDU gDbbFz"
     />
   </div>,
   "debug": [Function],

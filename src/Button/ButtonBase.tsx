@@ -1,17 +1,12 @@
-import { ReactElement } from 'react'
+import type { ComponentProps } from 'react'
 
+import type { ButtonParameters } from './styled'
 import * as Styles from './styled'
 
-interface Props {
-	/**what will be rendered inside the button. It represents the content or label of the button */
-	children?: any
-	/** Click callback, with event object passed as argument */
-	onClick?: () => void
+type Props = {
 	/** When set to `true`, this prop makes the button smaller in size. */
 	small?: boolean
-	/** gives the button a solid background when set to `true` */
-	solid?: boolean
-	/** gitves the submit attribute to the button element */
+	/** gives the submit attribute to the button element */
 	submit?: boolean
 	/**to display the button inline with other elements */
 	inline?: boolean
@@ -19,23 +14,16 @@ interface Props {
 	center?: boolean
 	/** set the button as the default action */
 	default?: boolean
-	/** disables the button when set to `true` */
-	disabled?: boolean
-	/** control whether the button is in read-only mode */
-	readOnly?: boolean
-	/** indicates that the button is required for a certain action */
-	required?: boolean
 	/** when set to `true` styles of the button change to red to indicate a irreversible action */
 	destructive?: boolean
 	/** when set to `true` the button background disspaears */
 	$transparent?: boolean
-	as?: string | ReactElement
-	name?: string
-	/** */
+	/** @deprecated */
 	title?: string
-}
+} & ButtonParameters &
+	ComponentProps<'button'>
 
-export { baseButtonStyles } from './styled'
+export { ButtonStyle as baseButtonStyles } from './styled'
 
 /**Cretia actions buttons
  *
@@ -44,22 +32,22 @@ export { baseButtonStyles } from './styled'
  * `solid` and `$transparent` props.
  */
 
-function ButtonBase({
-	name = 'react',
-	title,
-	submit = false,
-	inline = false,
-	center = false,
-	readOnly = false,
-	required = false,
-	children,
-	disabled = false,
-	destructive = false,
-	solid = submit,
-	small = inline,
-	$transparent = inline,
-}: Props) {
-	const useButton = !submit && typeof children !== 'string'
+function ButtonBase(props: Props) {
+	const {
+		name,
+		title,
+		submit = false,
+		inline = false,
+		center = false,
+		children = title,
+		disabled = false,
+		destructive = false,
+		solid = Boolean(submit),
+		small = Boolean(inline),
+		$transparent = Boolean(inline),
+
+		...otherProps
+	} = props
 
 	return (
 		<Styles.Container
@@ -68,15 +56,13 @@ function ButtonBase({
 			solid={solid}
 			$center={center}
 			disabled={disabled}
-			readOnly={readOnly}
-			required={required}
 			$destructive={destructive}
 			$transparent={$transparent}
 			type={submit ? 'submit' : 'button'}
-			{...(useButton
-				? { as: 'button' as any, children: children || title }
-				: { value: children || title })}
-		/>
+			{...otherProps}
+		>
+			{children}
+		</Styles.Container>
 	)
 }
 

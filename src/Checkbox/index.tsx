@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, ReactElement, ReactNode } from 'react'
+import type { ChangeEvent, CSSProperties, ReactElement, ReactNode } from 'react'
 import { styled } from 'styled-components'
 
 import { Label } from './styled'

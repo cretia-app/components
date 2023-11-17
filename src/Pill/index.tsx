@@ -1,4 +1,4 @@
-import { CSSProperties, ReactElement, ReactNode } from 'react'
+import type { CSSProperties, ReactElement, ReactNode } from 'react'
 import { styled } from 'styled-components'
 
 // import errorIcon from '@/Confirmation/error-icon.svg'
