@@ -1,7 +1,6 @@
 export * from './Button'
 export * from './Button/Dropdown'
 export * from './Checkbox'
-export * from './ColorPicker'
 export * from './ErrorMessage'
 export * from './File'
 export * from './Pill'

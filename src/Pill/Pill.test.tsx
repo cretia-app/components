@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { render } from '@/__tests__/utils'
+import { render } from '../__tests__/utils'
 
 import { Pill } from '.'
 

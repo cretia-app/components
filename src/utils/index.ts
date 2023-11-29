@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export { default as devices } from './devices'
+export { devices } from './devices'
 
 export function useToggle(
 	initialState = false,

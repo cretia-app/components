@@ -1,6 +1,6 @@
 import { describe, expect, test, vi } from 'vitest'
 
-import { fireEvent, render, screen } from '@/__tests__/utils'
+import { fireEvent, render, screen } from '../__tests__/utils'
 
 import { Button } from '.'
 

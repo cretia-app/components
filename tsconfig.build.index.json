@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"emitDeclarationOnly": true,
+		"outDir": "./dist",
+		"sourceMap": false
+	},
+	"exclude": [
+		"**/*.test.ts",
+		"**/*.test.tsx",
+		"**/*.stories.ts",
+		"**/*.stories.tsx"
+	],
+	"extends": "./tsconfig.json",
+	"include": ["src/**/*.ts", "src/*/*.tsx"]
+}

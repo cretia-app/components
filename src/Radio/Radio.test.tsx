@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { render, screen } from '@/__tests__/utils'
+import { render, screen } from '../__tests__/utils'
 
 import { Radio } from '.'
 

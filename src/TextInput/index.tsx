@@ -8,12 +8,13 @@ import type {
 	ReactNode,
 } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
-import { styled } from 'styled-components'
 
-import { ErrorMessage } from '@/ErrorMessage'
-import { Tooltip } from '@/Tooltip'
+import { styled } from '../utils/styled-components'
 
-import 'cleave.js/dist/addons/cleave-phone.mx'
+import { ErrorMessage } from '../ErrorMessage'
+import { Tooltip } from '../Tooltip'
+
+import 'cleave.js/dist/addons/cleave-phone.mx.js'
 
 import * as Styles from './styles'
 

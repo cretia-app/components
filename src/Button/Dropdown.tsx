@@ -1,9 +1,10 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { IconChevronDown } from '@tabler/icons-react'
 import type { ComponentProps } from 'react'
-import styled from 'styled-components'
 
-import { Flex } from '@/system'
+import { styled } from '../utils/styled-components'
+
+import { Flex } from '../system'
 
 import { ButtonStyle, Container } from './styled'
 import { Button } from '.'

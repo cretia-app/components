@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from '../utils/styled-components'
 
 const Container = styled.div`
 	background-color: var(--human-color--gray-7);

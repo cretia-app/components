@@ -1,6 +1,7 @@
 import { type ComponentProps, forwardRef } from 'react'
 import type { ReactNode } from 'react'
-import styled from 'styled-components'
+
+import { styled } from '../utils/styled-components'
 
 import * as Styles from './styled'
 

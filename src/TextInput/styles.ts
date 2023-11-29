@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from '../utils/styled-components'
 
 export const TextInputContainer = styled.div<{
 	$prefix?: string

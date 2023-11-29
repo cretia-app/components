@@ -1,5 +1,6 @@
 import type { ChangeEvent, CSSProperties, ReactElement, ReactNode } from 'react'
-import { styled } from 'styled-components'
+
+import { styled } from '../utils/styled-components'
 
 import { Label } from './styled'
 

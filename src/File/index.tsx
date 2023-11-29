@@ -1,5 +1,6 @@
 import type { ChangeEvent, ReactElement } from 'react'
-import { styled } from 'styled-components'
+
+import { styled } from '../utils/styled-components'
 
 import * as Styled from './styled'
 

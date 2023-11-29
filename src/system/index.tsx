@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import type {
 	FlexboxProps,
 	GridProps,
@@ -8,6 +7,8 @@ import type {
 	SpaceProps,
 } from 'styled-system'
 import { flexbox, grid, layout, margin, position, space } from 'styled-system'
+
+import { styled } from '../utils/styled-components'
 
 type BoxProps = SpaceProps & MarginProps & LayoutProps & PositionProps
 

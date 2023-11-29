@@ -1,10 +1,11 @@
 import type { CSSProperties, ReactElement, ReactNode } from 'react'
-import { styled } from 'styled-components'
 
-// import errorIcon from '@/Confirmation/error-icon.svg'
-// import infoIcon from '@/Confirmation/info-icon.svg'
-// import successIcon from '@/Confirmation/success-icon.svg'
-// import warningIcon from '@/Confirmation/warning-icon.svg'
+import { styled } from '../utils/styled-components'
+
+// import errorIcon from '../Confirmation/error-icon.svg'
+// import infoIcon from '../Confirmation/info-icon.svg'
+// import successIcon from '../Confirmation/success-icon.svg'
+// import warningIcon from '../Confirmation/warning-icon.svg'
 import * as Styles from './styles'
 
 interface Props {

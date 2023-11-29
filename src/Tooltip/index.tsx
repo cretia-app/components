@@ -1,5 +1,6 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import styled from 'styled-components'
+
+import { styled } from '../utils/styled-components'
 
 const StyledContent = styled(TooltipPrimitive.Content)`
 	border-radius: var(--space--small);

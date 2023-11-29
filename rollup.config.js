@@ -1,46 +1,55 @@
-import commonjs from '@rollup/plugin-commonjs'
-import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import copy from 'rollup-plugin-copy'
-import { dts } from 'rollup-plugin-dts'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { terser } from 'rollup-plugin-terser'
+import _esbuild from 'rollup-plugin-esbuild'
+import replace from 'rollup-plugin-replace'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const packageJson = require('./package.json')
+const NODE_ENV = process.env.NODE_ENV || 'development'
+
+const esbuild = _esbuild.default ?? _esbuild
+
+const baseBundle = {
+	external: (id) => !/^[./]/.test(id),
+	plugins: [
+		replace({
+			'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+			'cleave.js/react': 'cleave.js/react.js',
+		}),
+		esbuild(),
+	],
+}
 
 export default [
 	{
-		input: 'src/index.ts',
+		...baseBundle,
+		input: './src/index.ts',
 		output: [
 			{
-				file: packageJson.main,
+				dir: 'dist',
+				entryFileNames: '[name].cjs',
+				exports: 'auto',
 				format: 'cjs',
-				sourcemap: true,
+				preserveModules: true,
+				preserveModulesRoot: 'src',
 			},
 			{
-				file: packageJson.module,
+				dir: 'dist',
+				entryFileNames: '[name].js',
+				exports: 'auto',
 				format: 'esm',
-				sourcemap: true,
+				preserveModules: true,
+				preserveModulesRoot: 'src',
 			},
 		],
 		plugins: [
-			peerDepsExternal(),
-			nodeResolve({
-				preferBuiltins: false,
+			...baseBundle.plugins,
+			typescript({
+				declaration: true,
+				declarationDir: 'dist',
+				tsconfig: './tsconfig.build.index.json',
 			}),
-			commonjs(),
-			typescript(),
-			terser(),
 			copy({
 				targets: [{ src: 'src/styles/**', dest: 'styles' }],
 			}),
 		],
-		external: ['react', 'react-dom', 'styled-components'],
-	},
-	{
-		input: 'dist/esm/types/index.d.ts',
-		output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-		plugins: [dts()],
 	},
 ]

@@ -10,7 +10,7 @@ export const sizes = {
 
 export const TABLET_PORTRAIT_MIN_WIDTH = 768
 
-export default {
+export const devices = {
 	mobileS: `(min-width: ${sizes.mobileS})`,
 	mobileM: `(min-width: ${sizes.mobileM})`,
 	mobileL: `(min-width: ${sizes.mobileL})`,

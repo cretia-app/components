@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from '../utils/styled-components'
 
 export const Preview = styled.div<{ $paddingless?: boolean }>`
 	border: 1px solid gray;
